@@ -285,51 +285,7 @@
 
         <rule>
             <region>
-                <cuboid name="pink-wool" min="-51,3,90" max="-51,3,90"/>
-            </region>
-
-            <filter>
-                <block>wool:6</block>
-            </filter>
-
-            <replacement>wool:6</replacement>
-
-            <drops>
-                <item amount="2" damage="6">wool</item>
-            </drops>
-
-            <experience>0</experience>
-
-            <direct>true</direct>
-
-            <wrongtool>true</wrongtool>
-        </rule>
-
-        <rule>
-            <region>
-                <cuboid name="magenta-wool" min="0,3,39" max="0,3,39"/>
-            </region>
-
-            <filter>
-                <block>wool:2</block>
-            </filter>
-
-            <replacement>wool:2</replacement>
-
-            <drops>
-                <item amount="2" damage="2">wool</item>
-            </drops>
-
-            <experience>0</experience>
-
-            <direct>true</direct>
-
-            <wrongtool>true</wrongtool>
-        </rule>
-
-        <rule>
-            <region>
-                <cuboid name="green-wool" min="51,3,90" max="51,3,90"/>
+                <block name="green-wool">0,3,39</block>
             </region>
 
             <filter>
@@ -351,7 +307,51 @@
 
         <rule>
             <region>
-                <cuboid name="lime-wool" min="0,3,141" max="0,3,141"/>
+                <block name="magenta-wool">51,3,90</block>
+            </region>
+
+            <filter>
+                <block>wool:2</block>
+            </filter>
+
+            <replacement>wool:2</replacement>
+
+            <drops>
+                <item amount="2" damage="2">wool</item>
+            </drops>
+
+            <experience>0</experience>
+
+            <direct>true</direct>
+
+            <wrongtool>true</wrongtool>
+        </rule>
+
+        <rule>
+            <region>
+                <block name="pink-wool">0,3,141</block>
+            </region>
+
+            <filter>
+                <block>wool:6</block>
+            </filter>
+
+            <replacement>wool:6</replacement>
+
+            <drops>
+                <item amount="2" damage="6">wool</item>
+            </drops>
+
+            <experience>0</experience>
+
+            <direct>true</direct>
+
+            <wrongtool>true</wrongtool>
+        </rule>
+
+        <rule>
+            <region>
+                <block name="lime-wool">-51,3,90</block>
             </region>
 
             <filter>
