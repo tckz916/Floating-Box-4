@@ -7,15 +7,16 @@
         Ver-1.0.2 Mapの修正
         Ver-1.1.0 指摘された問題の修正
         Ver-1.2.0 指摘された問題の修正
+        Ver-1.3.0 2015/11/30 羊毛の配置をリメイク元のFloating Boxと同じ配置に変更, 羊毛部屋のハシゴを階段に変更, 羊毛台座を妨害できることを修正
     -->
 
     <name>Floating Box 4</name>
-    <version>1.2.0</version>
+    <version>1.3.0</version>
     <objective>Take the enemy's wool located toeither side of the enemy's base and place it in your victory</objective>
 
     <!-- 関係者 -->
     <authors>
-        <author contribution="Author/XMLCoding">hayate916</author>
+        <author contribution="Author/XMLCoding">hayatarou_</author>
         <author contribution="Author/Builder">toufuu3</author>
     </authors>
 
@@ -137,10 +138,10 @@
         <cuboid name="gold5" min="61,2,151" max="55,5,145"/>
         <cuboid name="gold6" min="33,2,151" max="39,5,145"/>
         <cuboid name="gold7" min="33,2,123" max="39,5,129"/>
-        <rectangle name="wool-place" min="60,111" max="62,117"/>
-        <rectangle name="wool-place1" min="27,150" max="21,152"/>
-        <rectangle name="wool-place2" min="-27,30" max="-21,28"/>
-        <rectangle name="wool-place3" min="-60,63" max="-62,69"/>
+        <rectangle name="wool-place" min="59,111" max="62,117"/>
+        <rectangle name="wool-place1" min="27,149" max="21,152"/>
+        <rectangle name="wool-place2" min="-27,31" max="-21,28"/>
+        <rectangle name="wool-place3" min="-59,63" max="-62,69"/>
 
 
         <union name="wool-places">
@@ -149,6 +150,14 @@
             <region name="wool-place2"/>
             <region name="wool-place3"/>
         </union>
+
+        <complement name="wool-places-complement">
+            <region name="wool-places"/>
+            <block>24.0,8.0,151.0</block>
+            <block>61.0,8.0,114.0</block>
+            <block>-24.0,8.0,29.0</block>
+            <block>-61.0,8.0,66.0</block>
+        </complement>
 
         <union name="base">
             <region name="red-base"/>
@@ -217,14 +226,15 @@
             <region name="red-wools"/>
         </apply>
 
-        <apply block-break="deny-break" block-place="deny-place" message="It is out of range, you can not put block here.">
+        <apply block-break="deny-break" block-place="deny-place"
+               message="It is out of range, you can not put block here.">
             <negative>
                 <region name="void"/>
             </negative>
         </apply>
 
         <apply block="deny-blocks" message="You can not edit around the pedestal.">
-            <region name="wool-places"/>
+            <region name="wool-places-complement"/>
         </apply>
 
     </regions>
@@ -232,19 +242,19 @@
     <wools>
 
         <wool team="red" color="magenta">
-            <block location="-62,8,66"/>
+            <block>-61.0,8.0,66.0</block>
         </wool>
 
         <wool team="red" color="pink">
-            <block location="-24,8,28"/>
+            <block>-24.0,8.0,29.0</block>
         </wool>
 
         <wool team="blue" color="green">
-            <block location="24,8,152"/>
+            <block>24.0,8.0,151.0</block>
         </wool>
 
         <wool team="blue" color="lime">
-            <block location="62,8,114"/>
+            <block>61.0,8.0,114.0</block>
         </wool>
     </wools>
 
@@ -285,7 +295,7 @@
             <replacement>wool:6</replacement>
 
             <drops>
-                <item amount="1" damage="6">wool</item>
+                <item amount="2" damage="6">wool</item>
             </drops>
 
             <experience>0</experience>
@@ -307,7 +317,7 @@
             <replacement>wool:2</replacement>
 
             <drops>
-                <item amount="1" damage="2">wool</item>
+                <item amount="2" damage="2">wool</item>
             </drops>
 
             <experience>0</experience>
@@ -329,7 +339,7 @@
             <replacement>wool:13</replacement>
 
             <drops>
-                <item amount="1" damage="13">wool</item>
+                <item amount="2" damage="13">wool</item>
             </drops>
 
             <experience>0</experience>
@@ -351,7 +361,7 @@
             <replacement>wool:5</replacement>
 
             <drops>
-                <item amount="1" damage="5">wool</item>
+                <item amount="2" damage="5">wool</item>
             </drops>
 
             <experience>0</experience>
@@ -476,7 +486,8 @@
             <string name="You can't enter to the enemy's base." value="敵チームの拠点には侵入出来ません。"/>
             <string name="You can't enter to the your team's wool room." value="自チームの羊毛部屋には侵入出来ません。"/>
             <string name="It is out of range, you can not put block here." value="範囲外です、ここにブロックを置けません。"/>
-            <string name="Take the enemy's wool located to either side of the enemy's base and place it in　your victory" value="敵本拠地横にある羊毛を奪取し、台座に設置"/>
+            <string name="Take the enemy's wool located to either side of the enemy's base and place it in　your victory"
+                    value="敵本拠地横にある羊毛を奪取し、台座に設置"/>
             <string name="You can not edit around the pedestal." value="台座周辺の編集はできません。"/>
         </locale>
     </locales>
