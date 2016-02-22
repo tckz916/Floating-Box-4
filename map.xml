@@ -8,89 +8,93 @@
         Ver-1.1.0 指摘された問題の修正
         Ver-1.2.0 指摘された問題の修正
         Ver-1.3.0 2015/11/30 羊毛の配置をリメイク元のFloating Boxと同じ配置に変更, 羊毛部屋のハシゴを階段に変更, 羊毛台座を妨害できることを修正
+        Ver-1.3.1 2016/02/23 全SpawnのY座標を+2 
     -->
 
     <name>Floating Box 4</name>
-    <version>1.3.0</version>
+    <version>1.3.1</version>
     <objective>Take the enemy's wool located toeither side of the enemy's base and place it in your victory</objective>
 
     <!-- 関係者 -->
     <authors>
-        <author contribution="Author/XMLCoding">hayatarou_</author>
-        <author contribution="Author/Builder">toufuu3</author>
+    	<author contribution="Author/XMLCoding">hayatarou_</author>
+    	<author contribution="Author/Builder">toufuu3</author>
     </authors>
 
     <!-- チーム -->
     <teams>
-        <team color="red" max="20">Red Team</team>
-        <team color="blue" max="20">Blue Team</team>
+    	<team color="red" max="20">Red Team</team>
+    	<team color="blue" max="20">Blue Team</team>
     </teams>
 
     <!-- キット -->
     <kits>
-        <kit name="spawn">
-            <item slot="0" enchantment="durability:3" bind="true">stone sword</item>
-            <item slot="1" bind="true">bow</item>
-            <item slot="2" enchantment="dig_speed:3" bind="true">iron axe</item>
-            <item slot="3" enchantment="dig_speed:3" bind="true">iron pickaxe</item>
-            <item slot="4" amount="1" bind="true">golden apple</item>
-            <item slot="5" amount="16">cooked beef</item>
-            <item slot="6" amount="32">log</item>
-            <item slot="9" amount="16">arrow</item>
-        </kit>
+    	<kit name="spawn">
+    		<item slot="0" enchantment="durability:3" bind="true">stone sword</item>
+    		<item slot="1" bind="true">bow</item>
+    		<item slot="2" enchantment="dig_speed:3" bind="true">iron axe</item>
+    		<item slot="3" enchantment="dig_speed:3" bind="true">iron pickaxe</item>
+    		<item slot="4" amount="1" bind="true">golden apple</item>
+    		<item slot="5" amount="16">cooked beef</item>
+    		<item slot="6" amount="32">log</item>
+    		<item slot="9" amount="16">arrow</item>
+    		<head slot="103" name="Carved Pumpkin" bind="true">
+    			<skin>eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmVjNDE1ZDcwMmYzMjkyYTgyZjE0NzFjODc5NGNmNjMxMjJkNDQ5ZDI4YWI4ODZkNGRjNThmYWZkNjYifX19</skin>
+    		</head>
+    	</kit>
 
-        <kit name="red" parents="spawn">
-            <item slot="7" amount="64" damage="14">stained glass</item>
-            <helmet color="993333" bind="true">leather helmet</helmet>
-            <chestplate color="993333" bind="true">leather chestplate</chestplate>
-            <leggings color="993333" bind="true">leather leggings</leggings>
-            <boots color="993333" bind="true">leather boots</boots>
-        </kit>
+    	<kit name="red" parents="spawn">
+    		<item slot="7" amount="64" damage="14">stained glass</item>
+    		<!-- <helmet color="993333" bind="true">leather helmet</helmet> -->
+    		<chestplate color="993333" bind="true">leather chestplate</chestplate>
+    		<leggings color="993333" bind="true">leather leggings</leggings>
+    		<boots color="993333" bind="true">leather boots</boots>
+    	</kit>
 
-        <kit name="blue" parents="spawn">
-            <item slot="7" amount="64" damage="11">stained glass</item>
-            <helmet color="334CB2" bind="true">leather helmet</helmet>
-            <chestplate color="334CB2" bind="true">leather chestplate</chestplate>
-            <leggings color="334CB2" bind="true">leather leggings</leggings>
-            <boots color="334CB2" bind="true">leather boots</boots>
-        </kit>
+    	<kit name="blue" parents="spawn">
+    		<item slot="7" amount="64" damage="11">stained glass</item>
+    		<!-- <helmet color="334CB2" bind="true">leather helmet</helmet> -->
+    		<chestplate color="334CB2" bind="true">leather chestplate</chestplate>
+    		<leggings color="334CB2" bind="true">leather leggings</leggings>
+    		<boots color="334CB2" bind="true">leather boots</boots>
+    	</kit>
 
     </kits>
 
     <!-- アイテム関連 -->
 
     <itemremove>
-        <item>stained glass</item>
-        <item>wool</item>
-        <item>gold chestplate</item>
-        <item>gold leggings</item>
-        <item>gold boots</item>
-        <item>leather chestplate</item>
-        <item>chainmail boots</item>
-        <item>arrow</item>
+    	<item>stained glass</item>
+    	<item>wool</item>
+    	<item>gold chestplate</item>
+    	<item>gold leggings</item>
+    	<item>gold boots</item>
+    	<item>leather chestplate</item>
+    	<item>chainmail boots</item>
+    	<item>arrow</item>
     </itemremove>
 
     <toolrepair>
-        <tool>wood sword</tool>
-        <tool>iron axe</tool>
-        <tool>iron pickaxe</tool>
-        <tool>bow</tool>
+    	<tool>wood sword</tool>
+    	<tool>iron axe</tool>
+    	<tool>iron pickaxe</tool>
+    	<tool>bow</tool>
     </toolrepair>
 
     <!--スポーン -->
 
     <spawns>
-        <spawn team="red" yaw="-45" kit="red">
-            <cuboid min="-47,7,43" max="-47,7,43"/>
-        </spawn>
+    	<spawn team="red" yaw="-45" kit="red">
+    		<cuboid min="-47,9,43" max="-47,9,43"/>
+    	</spawn>
 
-        <spawn team="blue" yaw="135" kit="blue">
-            <cuboid min="47,7,137" max="47,7,137"/>
-        </spawn>
+    	<spawn team="blue" yaw="135" kit="blue">
+    		<cuboid min="47,9,137" max="47,9,137"/>
+    	</spawn>
 
-        <default yaw="0">
-            <cuboid min="0.5,29,0.5" max="0.5,29,0.5"/>
-        </default>
+    	<default yaw="0">
+    		<cuboid min="0.5,31,0.5" max="0.5,31,0.5"/>
+    	</default>
 
     </spawns>
 
@@ -98,301 +102,301 @@
 
     <filters>
 
-        <filter name="red">
-            <team>red</team>
-        </filter>
+    	<filter name="red">
+    		<team>red</team>
+    	</filter>
 
-        <filter name="blue">
-            <team>blue</team>
-        </filter>
+    	<filter name="blue">
+    		<team>blue</team>
+    	</filter>
 
-        <filter name="goldbreak">
-            <block>gold block</block>
-        </filter>
+    	<filter name="goldbreak">
+    		<block>gold block</block>
+    	</filter>
 
-        <filter name="woolbreak">
-            <block>wool</block>
-        </filter>
+    	<filter name="woolbreak">
+    		<block>wool</block>
+    	</filter>
 
     </filters>
 
     <!-- リージョン -->
 
     <regions>
-        <rectangle name="red-base" min="-32,58" max="-62,28"/>
-        <rectangle name="blue-base" min="32,122" max="62,152"/>
-        <rectangle name="red-wool" min="-5,136" max="5,146"/>
-        <rectangle name="red-wool1" min="46,95" max="56,85"/>
-        <rectangle name="red-wool2" min="41,87" max="45,93"/>
-        <rectangle name="red-wool3" min="3,131" max="-3,135"/>
-        <rectangle name="blue-wool" min="5,44" max="-5,34"/>
-        <rectangle name="blue-wool1" min="-46,85" max="-56,95"/>
-        <rectangle name="blue-wool2" min="3,45" max="-3,49"/>
-        <rectangle name="blue-wool3" min="-41,93" max="-45,87"/>
-        <rectangle name="void" min="-62,28" max="62,152"/>
-        <cuboid name="gold" min="-33,2,29" max="-39,5,35"/>
-        <cuboid name="gold1" min="-33,2,57" max="-39,5,51"/>
-        <cuboid name="gold2" min="-61,2,57" max="-55,5,51"/>
-        <cuboid name="gold3" min="-61,2,29" max="-55,5,35"/>
-        <cuboid name="gold4" min="61,2,123" max="55,5,129"/>
-        <cuboid name="gold5" min="61,2,151" max="55,5,145"/>
-        <cuboid name="gold6" min="33,2,151" max="39,5,145"/>
-        <cuboid name="gold7" min="33,2,123" max="39,5,129"/>
-        <rectangle name="wool-place" min="59,111" max="62,117"/>
-        <rectangle name="wool-place1" min="27,149" max="21,152"/>
-        <rectangle name="wool-place2" min="-27,31" max="-21,28"/>
-        <rectangle name="wool-place3" min="-59,63" max="-62,69"/>
+    	<rectangle name="red-base" min="-32,58" max="-62,28"/>
+    	<rectangle name="blue-base" min="32,122" max="62,152"/>
+    	<rectangle name="red-wool" min="-5,136" max="5,146"/>
+    	<rectangle name="red-wool1" min="46,95" max="56,85"/>
+    	<rectangle name="red-wool2" min="41,87" max="45,93"/>
+    	<rectangle name="red-wool3" min="3,131" max="-3,135"/>
+    	<rectangle name="blue-wool" min="5,44" max="-5,34"/>
+    	<rectangle name="blue-wool1" min="-46,85" max="-56,95"/>
+    	<rectangle name="blue-wool2" min="3,45" max="-3,49"/>
+    	<rectangle name="blue-wool3" min="-41,93" max="-45,87"/>
+    	<rectangle name="void" min="-62,28" max="62,152"/>
+    	<cuboid name="gold" min="-33,2,29" max="-39,5,35"/>
+    	<cuboid name="gold1" min="-33,2,57" max="-39,5,51"/>
+    	<cuboid name="gold2" min="-61,2,57" max="-55,5,51"/>
+    	<cuboid name="gold3" min="-61,2,29" max="-55,5,35"/>
+    	<cuboid name="gold4" min="61,2,123" max="55,5,129"/>
+    	<cuboid name="gold5" min="61,2,151" max="55,5,145"/>
+    	<cuboid name="gold6" min="33,2,151" max="39,5,145"/>
+    	<cuboid name="gold7" min="33,2,123" max="39,5,129"/>
+    	<rectangle name="wool-place" min="59,111" max="62,117"/>
+    	<rectangle name="wool-place1" min="27,149" max="21,152"/>
+    	<rectangle name="wool-place2" min="-27,31" max="-21,28"/>
+    	<rectangle name="wool-place3" min="-59,63" max="-62,69"/>
 
 
-        <union name="wool-places">
-            <region name="wool-place"/>
-            <region name="wool-place1"/>
-            <region name="wool-place2"/>
-            <region name="wool-place3"/>
-        </union>
+    	<union name="wool-places">
+    		<region name="wool-place"/>
+    		<region name="wool-place1"/>
+    		<region name="wool-place2"/>
+    		<region name="wool-place3"/>
+    	</union>
 
-        <complement name="wool-places-complement">
-            <region name="wool-places"/>
-            <block>24.0,8.0,151.0</block>
-            <block>61.0,8.0,114.0</block>
-            <block>-24.0,8.0,29.0</block>
-            <block>-61.0,8.0,66.0</block>
-        </complement>
+    	<complement name="wool-places-complement">
+    		<region name="wool-places"/>
+    		<block>24.0,8.0,151.0</block>
+    		<block>61.0,8.0,114.0</block>
+    		<block>-24.0,8.0,29.0</block>
+    		<block>-61.0,8.0,66.0</block>
+    	</complement>
 
-        <union name="base">
-            <region name="red-base"/>
-            <region name="blue-base"/>
-        </union>
+    	<union name="base">
+    		<region name="red-base"/>
+    		<region name="blue-base"/>
+    	</union>
 
-        <union name="woolroom">
-            <region name="red-wool"/>
-            <region name="red-wool1"/>
-            <region name="red-wool2"/>
-            <region name="red-wool3"/>
-            <region name="blue-wool"/>
-            <region name="blue-wool1"/>
-            <region name="blue-wool2"/>
-            <region name="blue-wool3"/>
-        </union>
+    	<union name="woolroom">
+    		<region name="red-wool"/>
+    		<region name="red-wool1"/>
+    		<region name="red-wool2"/>
+    		<region name="red-wool3"/>
+    		<region name="blue-wool"/>
+    		<region name="blue-wool1"/>
+    		<region name="blue-wool2"/>
+    		<region name="blue-wool3"/>
+    	</union>
 
-        <union name="red-wools">
-            <region name="red-wool"/>
-            <region name="red-wool1"/>
-            <region name="red-wool2"/>
-            <region name="red-wool3"/>
-        </union>
+    	<union name="red-wools">
+    		<region name="red-wool"/>
+    		<region name="red-wool1"/>
+    		<region name="red-wool2"/>
+    		<region name="red-wool3"/>
+    	</union>
 
-        <union name="blue-wools">
-            <region name="blue-wool"/>
-            <region name="blue-wool1"/>
-            <region name="blue-wool2"/>
-            <region name="blue-wool3"/>
-        </union>
+    	<union name="blue-wools">
+    		<region name="blue-wool"/>
+    		<region name="blue-wool1"/>
+    		<region name="blue-wool2"/>
+    		<region name="blue-wool3"/>
+    	</union>
 
-        <union name="golds">
+    	<union name="golds">
 
-            <region name="gold"/>
-            <region name="gold1"/>
-            <region name="gold2"/>
-            <region name="gold3"/>
-            <region name="gold4"/>
-            <region name="gold5"/>
-            <region name="gold6"/>
-            <region name="gold7"/>
+    		<region name="gold"/>
+    		<region name="gold1"/>
+    		<region name="gold2"/>
+    		<region name="gold3"/>
+    		<region name="gold4"/>
+    		<region name="gold5"/>
+    		<region name="gold6"/>
+    		<region name="gold7"/>
 
-        </union>
+    	</union>
 
-        <apply block-break="goldbreak" block-place="deny-place" message="You can't modify the base.">
-            <region name="base"/>
-        </apply>
+    	<apply block-break="goldbreak" block-place="deny-place" message="You can't modify the base.">
+    		<region name="base"/>
+    	</apply>
 
-        <apply block-break="woolbreak" block-place="deny-place" message="You can't modify the wool room.">
-            <region name="woolroom"/>
-        </apply>
+    	<apply block-break="woolbreak" block-place="deny-place" message="You can't modify the wool room.">
+    		<region name="woolroom"/>
+    	</apply>
 
-        <apply enter="red" message="You can't enter to the enemy's base.">
-            <region name="red-base"/>
-        </apply>
+    	<apply enter="red" message="You can't enter to the enemy's base.">
+    		<region name="red-base"/>
+    	</apply>
 
-        <apply enter="blue" message="You can't enter to the enemy's base.">
-            <region name="blue-base"/>
-        </apply>
+    	<apply enter="blue" message="You can't enter to the enemy's base.">
+    		<region name="blue-base"/>
+    	</apply>
 
-        <apply enter="blue" message="You can't enter to the your team's wool room.">
-            <region name="blue-wools"/>
-        </apply>
+    	<apply enter="blue" message="You can't enter to the your team's wool room.">
+    		<region name="blue-wools"/>
+    	</apply>
 
-        <apply enter="red" message="You can't enter to the your team's wool room.">
-            <region name="red-wools"/>
-        </apply>
+    	<apply enter="red" message="You can't enter to the your team's wool room.">
+    		<region name="red-wools"/>
+    	</apply>
 
-        <apply block-break="deny-break" block-place="deny-place"
-               message="It is out of range, you can not put block here.">
-            <negative>
-                <region name="void"/>
-            </negative>
-        </apply>
+    	<apply block-break="deny-break" block-place="deny-place"
+    		message="It is out of range, you can not put block here.">
+    		<negative>
+    			<region name="void"/>
+    		</negative>
+    	</apply>
 
-        <apply block="deny-blocks" message="You can not edit around the pedestal.">
-            <region name="wool-places-complement"/>
-        </apply>
+    	<apply block="deny-blocks" message="You can not edit around the pedestal.">
+    		<region name="wool-places-complement"/>
+    	</apply>
 
     </regions>
 
     <wools>
 
-        <wool team="red" color="magenta">
-            <block>-61.0,8.0,66.0</block>
-        </wool>
+    	<wool team="red" color="magenta">
+    		<block>-61.0,8.0,66.0</block>
+    	</wool>
 
-        <wool team="red" color="pink">
-            <block>-24.0,8.0,29.0</block>
-        </wool>
+    	<wool team="red" color="pink">
+    		<block>-24.0,8.0,29.0</block>
+    	</wool>
 
-        <wool team="blue" color="green">
-            <block>24.0,8.0,151.0</block>
-        </wool>
+    	<wool team="blue" color="green">
+    		<block>24.0,8.0,151.0</block>
+    	</wool>
 
-        <wool team="blue" color="lime">
-            <block>61.0,8.0,114.0</block>
-        </wool>
+    	<wool team="blue" color="lime">
+    		<block>61.0,8.0,114.0</block>
+    	</wool>
     </wools>
 
     <!--その他 -->
 
     <blockdrops>
-        <rule>
-            <region>
-                <region name="golds"/>
-            </region>
+    	<rule>
+    		<region>
+    			<region name="golds"/>
+    		</region>
 
-            <filter>
-                <block>gold block</block>
-            </filter>
+    		<filter>
+    			<block>gold block</block>
+    		</filter>
 
-            <replacement>air</replacement>
+    		<replacement>air</replacement>
 
-            <drops>
-                <item>gold chestplate</item>
-                <item>gold leggings</item>
-                <item>gold boots</item>
-            </drops>
+    		<drops>
+    			<item>gold chestplate</item>
+    			<item>gold leggings</item>
+    			<item>gold boots</item>
+    		</drops>
 
-            <direct>true</direct>
+    		<direct>true</direct>
 
-            <experience>0</experience>
-        </rule>
+    		<experience>0</experience>
+    	</rule>
 
-        <rule>
-            <region>
-                <block name="green-wool">0,3,39</block>
-            </region>
+    	<rule>
+    		<region>
+    			<block name="green-wool">0,3,39</block>
+    		</region>
 
-            <filter>
-                <block>wool:13</block>
-            </filter>
+    		<filter>
+    			<block>wool:13</block>
+    		</filter>
 
-            <replacement>wool:13</replacement>
+    		<replacement>wool:13</replacement>
 
-            <drops>
-                <item amount="2" damage="13">wool</item>
-            </drops>
+    		<drops>
+    			<item amount="2" damage="13">wool</item>
+    		</drops>
 
-            <experience>0</experience>
+    		<experience>0</experience>
 
-            <direct>true</direct>
+    		<direct>true</direct>
 
-            <wrongtool>true</wrongtool>
-        </rule>
+    		<wrongtool>true</wrongtool>
+    	</rule>
 
-        <rule>
-            <region>
-                <block name="magenta-wool">51,3,90</block>
-            </region>
+    	<rule>
+    		<region>
+    			<block name="magenta-wool">51,3,90</block>
+    		</region>
 
-            <filter>
-                <block>wool:2</block>
-            </filter>
+    		<filter>
+    			<block>wool:2</block>
+    		</filter>
 
-            <replacement>wool:2</replacement>
+    		<replacement>wool:2</replacement>
 
-            <drops>
-                <item amount="2" damage="2">wool</item>
-            </drops>
+    		<drops>
+    			<item amount="2" damage="2">wool</item>
+    		</drops>
 
-            <experience>0</experience>
+    		<experience>0</experience>
 
-            <direct>true</direct>
+    		<direct>true</direct>
 
-            <wrongtool>true</wrongtool>
-        </rule>
+    		<wrongtool>true</wrongtool>
+    	</rule>
 
-        <rule>
-            <region>
-                <block name="pink-wool">0,3,141</block>
-            </region>
+    	<rule>
+    		<region>
+    			<block name="pink-wool">0,3,141</block>
+    		</region>
 
-            <filter>
-                <block>wool:6</block>
-            </filter>
+    		<filter>
+    			<block>wool:6</block>
+    		</filter>
 
-            <replacement>wool:6</replacement>
+    		<replacement>wool:6</replacement>
 
-            <drops>
-                <item amount="2" damage="6">wool</item>
-            </drops>
+    		<drops>
+    			<item amount="2" damage="6">wool</item>
+    		</drops>
 
-            <experience>0</experience>
+    		<experience>0</experience>
 
-            <direct>true</direct>
+    		<direct>true</direct>
 
-            <wrongtool>true</wrongtool>
-        </rule>
+    		<wrongtool>true</wrongtool>
+    	</rule>
 
-        <rule>
-            <region>
-                <block name="lime-wool">-51,3,90</block>
-            </region>
+    	<rule>
+    		<region>
+    			<block name="lime-wool">-51,3,90</block>
+    		</region>
 
-            <filter>
-                <block>wool:5</block>
-            </filter>
+    		<filter>
+    			<block>wool:5</block>
+    		</filter>
 
-            <replacement>wool:5</replacement>
+    		<replacement>wool:5</replacement>
 
-            <drops>
-                <item amount="2" damage="5">wool</item>
-            </drops>
+    		<drops>
+    			<item amount="2" damage="5">wool</item>
+    		</drops>
 
-            <experience>0</experience>
+    		<experience>0</experience>
 
-            <direct>true</direct>
+    		<direct>true</direct>
 
-            <wrongtool>true</wrongtool>
-        </rule>
+    		<wrongtool>true</wrongtool>
+    	</rule>
 
     </blockdrops>
 
     <renewables>
 
-        <renewable rate="3" particles="true" sound="true"
-                   avoid-entities="true">
-            <region>
-                <region name="golds"/>
-            </region>
-            <renew>gold block</renew>
-            <replace>air</replace>
-        </renewable>
+    	<renewable rate="3" particles="true" sound="true"
+    		avoid-entities="true">
+    		<region>
+    			<region name="golds"/>
+    		</region>
+    		<renew>gold block</renew>
+    		<replace>air</replace>
+    	</renewable>
 
     </renewables>
 
     <killreward>
 
-        <item amount="16">arrow</item>
+    	<item amount="16">arrow</item>
 
-        <kit>
-            <potion duration="5" amplifier="1" ambient="true">REGENERATION</potion>
-        </kit>
+    	<kit>
+    		<potion duration="5" amplifier="1" ambient="true">REGENERATION</potion>
+    	</kit>
     </killreward>
 
     <autorespawn/>
@@ -402,94 +406,94 @@
     <!-- チュートリアル -->
     <include src="tutorial.xml"/>
     <tutorial>
-        <stage title="Capture the Wool (CTW)">
-            <message>
-                <line>This map is a `a`lCapture the Wool`r (CTW) map.</line>
-                <line>
-                    The objective is to grab the wool on the enemy side and place it on your victory monument.
-                </line>
-            </message>
-            <message lang="ja_JP">
-                <line>このマップは `a`lCapture the Wool`r (CTW) マップです。</line>
-                <line>敵陣の羊毛部屋から羊毛を奪取し、台座に設置する事が目標になります。</line>
-            </message>
-            <teleport>
-                <point yaw="0" pitch="0">0.5,29,0.5</point>
-            </teleport>
-        </stage>
-        <stage title="`cRed `rteam spawn">
-            <title lang="ja_JP">Redチームの拠点</title>
-            <message>
-                <line>This is `cRed Team`r base.</line>
-            </message>
-            <message lang="ja_JP">
-                <line>ここは`cRedチーム`rの拠点です。</line>
-            </message>
-            <teleport>
-                <point yaw="-225" pitch="35">-23.5,20,66.5</point>
-            </teleport>
-        </stage>
-        <stage title="Blue team's Wool rooms">
-            <title lang="ja_JP">Blueチームの羊毛部屋</title>
-            <message>
-                <line>
-                    `9Blue team`r side has `alime `rand `2green `r wool rooms.
-                </line>
-                <line>
-                    `cRed Team`r side has `5magenta `rand `dpink`r wool rooms.
-                </line>
-                <line>
-                    `cRed Team`r should defend these rooms against enemy who are trying to steal the wool.
-                </line>
-            </message>
-            <message lang="ja_JP">
-                <line>
-                    `9Blueチーム`rの陣地には`alime`rと `2green `rの羊毛部屋があります。
-                </line>
-                <line>`cRedチーム`rの陣地には`5magenta`rと `dpink `rの羊毛部屋があります。</line>
-                <line>`cRedチーム`rは羊毛を奪取しようとする敵の攻撃からこの羊毛部屋を防衛する必要があります。</line>
-            </message>
-            <teleport>
-                <point yaw="0" pitch="40">0.5,15,126.5</point>
-            </teleport>
-        </stage>
-        <stage title="Place Point">
-            <title lang="ja_JP">羊毛設置台</title>
-            <message>
-                <line>This is the base for installing the wool.</line>
-            </message>
-            <message lang="ja_JP">
-                <line>羊毛を設置する台座です。</line>
-            </message>
-            <teleport>
-                <point yaw="0" pitch="0">24.5,7,149.5</point>
-            </teleport>
-        </stage>
-        <stage title="glhf">
-            <title lang="ja_JP">glhf</title>
-            <message>
-                <line>Good Luck! Have Fun!</line>
-            </message>
-            <message lang="ja_JP">
-                <line>それではお楽しみください！</line>
-            </message>
-            <teleport>
-                <point yaw="0" pitch="0">0,29,0</point>
-            </teleport>
-        </stage>
+    	<stage title="Capture the Wool (CTW)">
+    		<message>
+    			<line>This map is a `a`lCapture the Wool`r (CTW) map.</line>
+    			<line>
+    				The objective is to grab the wool on the enemy side and place it on your victory monument.
+    			</line>
+    		</message>
+    		<message lang="ja_JP">
+    			<line>このマップは `a`lCapture the Wool`r (CTW) マップです。</line>
+    			<line>敵陣の羊毛部屋から羊毛を奪取し、台座に設置する事が目標になります。</line>
+    		</message>
+    		<teleport>
+    			<point yaw="0" pitch="0">0.5,29,0.5</point>
+    		</teleport>
+    	</stage>
+    	<stage title="`cRed `rteam spawn">
+    		<title lang="ja_JP">Redチームの拠点</title>
+    		<message>
+    			<line>This is `cRed Team`r base.</line>
+    		</message>
+    		<message lang="ja_JP">
+    			<line>ここは`cRedチーム`rの拠点です。</line>
+    		</message>
+    		<teleport>
+    			<point yaw="-225" pitch="35">-23.5,20,66.5</point>
+    		</teleport>
+    	</stage>
+    	<stage title="Blue team's Wool rooms">
+    		<title lang="ja_JP">Blueチームの羊毛部屋</title>
+    		<message>
+    			<line>
+    				`9Blue team`r side has `alime `rand `2green `r wool rooms.
+    			</line>
+    			<line>
+    				`cRed Team`r side has `5magenta `rand `dpink`r wool rooms.
+    			</line>
+    			<line>
+    				`cRed Team`r should defend these rooms against enemy who are trying to steal the wool.
+    			</line>
+    		</message>
+    		<message lang="ja_JP">
+    			<line>
+    				`9Blueチーム`rの陣地には`alime`rと `2green `rの羊毛部屋があります。
+    			</line>
+    			<line>`cRedチーム`rの陣地には`5magenta`rと `dpink `rの羊毛部屋があります。</line>
+    			<line>`cRedチーム`rは羊毛を奪取しようとする敵の攻撃からこの羊毛部屋を防衛する必要があります。</line>
+    		</message>
+    		<teleport>
+    			<point yaw="0" pitch="40">0.5,15,126.5</point>
+    		</teleport>
+    	</stage>
+    	<stage title="Place Point">
+    		<title lang="ja_JP">羊毛設置台</title>
+    		<message>
+    			<line>This is the base for installing the wool.</line>
+    		</message>
+    		<message lang="ja_JP">
+    			<line>羊毛を設置する台座です。</line>
+    		</message>
+    		<teleport>
+    			<point yaw="0" pitch="0">24.5,7,149.5</point>
+    		</teleport>
+    	</stage>
+    	<stage title="glhf">
+    		<title lang="ja_JP">glhf</title>
+    		<message>
+    			<line>Good Luck! Have Fun!</line>
+    		</message>
+    		<message lang="ja_JP">
+    			<line>それではお楽しみください！</line>
+    		</message>
+    		<teleport>
+    			<point yaw="0" pitch="0">0,29,0</point>
+    		</teleport>
+    	</stage>
     </tutorial>
 
     <locales>
-        <locale lang="ja_JP">
-            <string name="You can't modify the base." value="拠点は編集出来ません。"/>
-            <string name="You can't modify the wool room." value="羊毛部屋は編集出来ません。"/>
-            <string name="You can't enter to the enemy's base." value="敵チームの拠点には侵入出来ません。"/>
-            <string name="You can't enter to the your team's wool room." value="自チームの羊毛部屋には侵入出来ません。"/>
-            <string name="It is out of range, you can not put block here." value="範囲外です、ここにブロックを置けません。"/>
-            <string name="Take the enemy's wool located to either side of the enemy's base and place it in　your victory"
-                    value="敵本拠地横にある羊毛を奪取し、台座に設置"/>
-            <string name="You can not edit around the pedestal." value="台座周辺の編集はできません。"/>
-        </locale>
-    </locales>
+    	<locale lang="ja_JP">
+    		<string name="You can't modify the base." value="拠点は編集出来ません。"/>
+    		<string name="You can't modify the wool room." value="羊毛部屋は編集出来ません。"/>
+    		<string name="You can't enter to the enemy's base." value="敵チームの拠点には侵入出来ません。"/>
+    		<string name="You can't enter to the your team's wool room." value="自チームの羊毛部屋には侵入出来ません。"/>
+    		<string name="It is out of range, you can not put block here." value="範囲外です、ここにブロックを置けません。"/>
+    		<string name="Take the enemy's wool located to either side of the enemy's base and place it in　your victory"
+    			value="敵本拠地横にある羊毛を奪取し、台座に設置"/>
+    			<string name="You can not edit around the pedestal." value="台座周辺の編集はできません。"/>
+    		</locale>
+    	</locales>
 
-</map>
+    </map>
